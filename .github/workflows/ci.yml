@@ -2,7 +2,11 @@ name: CI Calculadora
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   test:
@@ -26,5 +30,11 @@ jobs:
           pip install -r requirements.txt
           pip install pytest
 
+      - name: Ver archivos del proyecto
+        run: |
+          pwd
+          ls -la
+          ls -la tests || true
+
       - name: Ejecutar pruebas
-      run: pytest tests/
+        run: python -m pytest tests/ -v

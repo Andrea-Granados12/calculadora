@@ -1,13 +1,13 @@
-def sumar(a: float, b: float) -> float:
+def sumar(a, b):
     return a + b
 
-def restar(a: float, b: float) -> float:
+def restar(a, b):
     return a - b
 
-def multiplicar(a: float, b: float) -> float:
+def multiplicar(a, b):
     return a * b
 
-def dividir(a: float, b: float) -> float:
+def dividir(a, b):
     if b == 0:
-        raise ZeroDivisionError("No se puede dividir entre cero.")
+        raise ValueError("No se puede dividir entre cero")
     return a / b
